@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import color from 'tailwindcss/colors';
 import { fontSize } from 'tailwindcss/defaultTheme';
+import daisyui from 'daisyui';
 
 delete color.lightBlue;
 delete color.warmGray;
@@ -10,20 +11,8 @@ delete color.blueGray;
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  theme: {
-    fontSize: {
-      ...fontSize,
-    },
-    colors: {
-      ...color,
-      primary: '#870000',
-      secondary: '#ff6600',
-      tertiary: '#ff0066',
-      quaternary: '#00ff00',
-      backgroundColor: '#111',
-      textColor: '#eee',
-    },
-    extend: {},
+  daisyui: {
+    themes: ['luxury'],
   },
-  plugins: ['prettier-plugin-tailwindcss'],
+  plugins: ['prettier-plugin-tailwindcss', daisyui],
 };
